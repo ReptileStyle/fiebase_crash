@@ -24,19 +24,19 @@ struct FirebaseOptionsPlist {
 }
 
 private let productionConfig = FirebaseOptionsPlist(
-  clientID: "445606440735-nmgdjiedjntfcdf7gt3iie43v1r0sp5t.apps.googleusercontent.com",
-  reversedClientID: "com.googleusercontent.apps.445606440735-nmgdjiedjntfcdf7gt3iie43v1r0sp5t",
-  apiKey: "AIzaSyDuO9g8DnojBpuHdLdZW37iCbC1Ng_udGs",
-  gcmSenderID: "692425658344",
-  bundleID: "dev.kaipi.SessionsTestApp",
-  projectID: "sessionserror",
-  storageBucket: "sessionserror.appspot.com",
+  clientID: "1017648285108-0nvjuuikdlka3e1ujk690ipg347epvkt.apps.googleusercontent.com",
+  reversedClientID: "com.googleusercontent.apps.1017648285108-0nvjuuikdlka3e1ujk690ipg347epvkt",
+  apiKey: "AIzaSyAEylspRs_RQ62n9pmX4WCwSbMJjNzXq-U",
+  gcmSenderID: "1017648285108",
+  bundleID: "ru.sibirix.firebaseTastCrash",
+  projectID: "fir-crash-test-db674",
+  storageBucket: "fir-crash-test-db674.firebasestorage.app",
   isAdsEnabled: false,
   isAnalyticsEnabled: false,
   isAppInviteEnabled: true,
   isGCMEnabled: true,
   isSignInEnabled: true,
-  googleAppID: "1:692425658344:ios:7e2138099e0f7a3b185e5d"
+  googleAppID: "1:1017648285108:ios:e070caf92b4e8b7749dee1"
 )
 
 @main

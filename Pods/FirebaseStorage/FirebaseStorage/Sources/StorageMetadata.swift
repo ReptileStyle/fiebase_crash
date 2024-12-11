@@ -202,17 +202,17 @@ import Foundation
 
   // MARK: - Internal APIs
 
-  func updatedMetadata() -> [String: AnyHashable] {
+  internal func updatedMetadata() -> [String: AnyHashable] {
     return remove(matchingMetadata: dictionaryRepresentation(), oldMetadata: initialMetadata)
   }
 
-  enum StorageMetadataType {
+  internal enum StorageMetadataType {
     case unknown
     case file
     case folder
   }
 
-  var fileType: StorageMetadataType
+  internal var fileType: StorageMetadataType
 
   // MARK: - Private APIs and data
 
@@ -240,7 +240,7 @@ import Foundation
     return nil
   }
 
-  static func RFC3339StringFromDate(_ date: Date) -> String {
+  internal static func RFC3339StringFromDate(_ date: Date) -> String {
     return dateFormatter.string(from: date)
   }
 

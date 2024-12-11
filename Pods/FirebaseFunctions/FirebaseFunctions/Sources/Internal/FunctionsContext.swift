@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import Foundation
 import FirebaseAppCheckInterop
 import FirebaseAuthInterop
 import FirebaseMessagingInterop
-import Foundation
 
 /// FunctionsContext is a helper class for gathering metadata for a function call.
-class FunctionsContext: NSObject {
+internal class FunctionsContext: NSObject {
   let authToken: String?
   let fcmToken: String?
   let appCheckToken: String?
@@ -33,7 +33,7 @@ class FunctionsContext: NSObject {
   }
 }
 
-class FunctionsContextProvider: NSObject {
+internal class FunctionsContextProvider: NSObject {
   private var auth: AuthInterop?
   private var messaging: MessagingInterop?
   private var appCheck: AppCheckInterop?
@@ -51,8 +51,8 @@ class FunctionsContextProvider: NSObject {
 //
 //  }
 
-  func getContext(options: HTTPSCallableOptions? = nil,
-                  _ completion: @escaping ((FunctionsContext, Error?) -> Void)) {
+  internal func getContext(options: HTTPSCallableOptions? = nil,
+                           _ completion: @escaping ((FunctionsContext, Error?) -> Void)) {
     let dispatchGroup = DispatchGroup()
 
     var authToken: String?

@@ -83,17 +83,17 @@ open class StorageDownloadTask: StorageObservableTask, StorageTaskManagement {
 
   private var fetcher: GTMSessionFetcher?
   private var fetcherCompletion: ((Data?, NSError?) -> Void)?
-  var downloadData: Data?
+  internal var downloadData: Data?
   // Hold completion in object to force it to be retained until completion block is called.
-  var completionData: ((Data?, Error?) -> Void)?
-  var completionURL: ((URL?, Error?) -> Void)?
+  internal var completionData: ((Data?, Error?) -> Void)?
+  internal var completionURL: ((URL?, Error?) -> Void)?
 
   // MARK: - Internal Implementations
 
-  override init(reference: StorageReference,
-                service: GTMSessionFetcherService,
-                queue: DispatchQueue,
-                file: URL?) {
+  override internal init(reference: StorageReference,
+                         service: GTMSessionFetcherService,
+                         queue: DispatchQueue,
+                         file: URL?) {
     super.init(reference: reference, service: service, queue: queue, file: file)
   }
 
@@ -101,7 +101,7 @@ open class StorageDownloadTask: StorageObservableTask, StorageTaskManagement {
     self.fetcher?.stopFetching()
   }
 
-  func enqueueImplementation(resumeWith resumeData: Data? = nil) {
+  internal func enqueueImplementation(resumeWith resumeData: Data? = nil) {
     dispatchQueue.async { [weak self] in
       guard let self = self else { return }
       self.state = .queueing
@@ -180,7 +180,7 @@ open class StorageDownloadTask: StorageObservableTask, StorageTaskManagement {
     }
   }
 
-  func cancel(withError error: NSError) {
+  internal func cancel(withError error: NSError) {
     dispatchQueue.async { [weak self] in
       guard let self = self else { return }
       self.state = .cancelled

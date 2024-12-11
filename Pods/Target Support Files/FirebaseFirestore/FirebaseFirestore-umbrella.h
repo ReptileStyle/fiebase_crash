@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "FIRAggregateField.h"
 #import "FIRAggregateQuery.h"
 #import "FIRAggregateQuerySnapshot.h"
 #import "FIRAggregateSource.h"
